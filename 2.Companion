@@ -1,0 +1,5 @@
+SELECT firstname, lastname FROM users WHERE id = (
+SELECT to_user_id AS companion FROM messages WHERE from_user_id = 8
+union 
+SELECT from_user_id AS companion FROM messages WHERE to_user_id = 8
+ORDER BY companion LIMIT 1);
