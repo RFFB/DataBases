@@ -1,0 +1,1 @@
+SELECT name, (SELECT name from catalogs where id = catalog_id) AS catalog from products;
